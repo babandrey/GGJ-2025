@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 8816088520723987361}
-  speed: 50
+  speed: 150
   walkDirection: {x: 0, y: 0, z: 0}
 --- !u!50 &8816088520723987361
 Rigidbody2D:
