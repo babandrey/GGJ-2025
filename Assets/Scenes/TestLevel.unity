@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 709690881}
   - component: {fileID: 709690884}
   - component: {fileID: 709690883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 1694448540}
   - component: {fileID: 1694448543}
   - component: {fileID: 1694448544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Babi
   m_TagString: Untagged
   m_Icon: {fileID: 0}

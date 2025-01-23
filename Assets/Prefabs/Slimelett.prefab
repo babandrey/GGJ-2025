@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8525701881045409682}
   - component: {fileID: 8816088520723987361}
   - component: {fileID: 8444508041797178811}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slimelett
   m_TagString: Untagged
   m_Icon: {fileID: 0}

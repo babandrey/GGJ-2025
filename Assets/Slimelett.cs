@@ -9,6 +9,7 @@ public class Slimelett : MonoBehaviour
     public Vector3 walkDirection = Vector3.zero;
     void FixedUpdate()
     {
-        rigidbody.velocity = walkDirection * Time.deltaTime * speed;
+        Vector3 velocity = walkDirection * Time.deltaTime * speed;
+        rigidbody.velocity = new Vector3(velocity.x, rigidbody.velocity.y, velocity.z);
     }
 }
