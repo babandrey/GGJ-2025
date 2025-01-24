@@ -24,10 +24,24 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel();
+        }
+    }
+
     public void GoNextLevel()
     {
         int buildIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(buildIndex);
+        StartCoroutine(UpdateGoalsRequired());
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         StartCoroutine(UpdateGoalsRequired());
     }
 
