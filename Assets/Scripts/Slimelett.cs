@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slimelett : MonoBehaviour
 {
-    [SerializeField] private new Rigidbody2D rigidbody;
+    [SerializeField] public new Rigidbody2D rigidbody;
     [SerializeField] private CircleCollider2D circleCollider;
     [SerializeField] private float speed;
     [SerializeField] private float stopFriction;
@@ -24,7 +24,6 @@ public class Slimelett : MonoBehaviour
         else
         {
             float xVelocity = Mathf.Max(0, rigidbody.velocity.x * stopFriction);
-
             rigidbody.velocity = new Vector2(xVelocity, rigidbody.velocity.y);
         }
     }
