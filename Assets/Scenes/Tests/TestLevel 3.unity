@@ -1290,6 +1290,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndLevelGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 4567703391340631117, guid: 5e7a9aa486f3b5e4c9768a9a3f7b8153, type: 3}
+      propertyPath: sineAmp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567703391340631117, guid: 5e7a9aa486f3b5e4c9768a9a3f7b8153, type: 3}
+      propertyPath: sineFreq
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6046606606454160457, guid: 5e7a9aa486f3b5e4c9768a9a3f7b8153, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.62

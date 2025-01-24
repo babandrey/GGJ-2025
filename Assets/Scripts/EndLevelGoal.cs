@@ -8,9 +8,25 @@ public class EndLevelGoal : MonoBehaviour
     [HideInInspector] public static int currentGoals;
     [HideInInspector] public static int goalsRequired;
 
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     private bool isCovered = false;
     private GameObject currentCoverObject;
 
+    public float sineAmp;
+    public float sineFreq;
+    public Color coveredColor;
+    public float colorLerp;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    private void Update()
+    {
+        rb.velocity = Vector2.up * sineAmp * Mathf.Sin(Time.time * sineFreq);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isCovered)
@@ -25,7 +41,7 @@ public class EndLevelGoal : MonoBehaviour
                 LevelManager.Instance.GoNextLevel();
             }
 
-            //TODO: Add visuals
+            LeanTween.color(gameObject, coveredColor, 0.3f);
         }
     }
 
@@ -37,6 +53,7 @@ public class EndLevelGoal : MonoBehaviour
             isCovered = false;
             currentCoverObject = null;
             // TODO: Add visuals
+            LeanTween.color(gameObject, Color.white, 0.3f);
         }
 
     }
