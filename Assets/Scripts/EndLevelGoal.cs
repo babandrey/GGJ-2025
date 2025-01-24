@@ -8,9 +8,21 @@ public class EndLevelGoal : MonoBehaviour
     [HideInInspector] public static int currentGoals;
     [HideInInspector] public static int goalsRequired;
 
+    private Rigidbody2D rb;
     private bool isCovered = false;
     private GameObject currentCoverObject;
 
+    public float sineAmp;
+    public float sineFreq;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+    private void Update()
+    {
+        rb.velocity = Vector2.up * sineAmp * Mathf.Sin(Time.time * sineFreq);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isCovered)
