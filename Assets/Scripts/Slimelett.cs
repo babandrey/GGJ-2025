@@ -31,7 +31,6 @@ public class Slimelett : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("hewo");
         // moving slimelett should be the one to merge into stationary slimelett
         if (collision.gameObject.TryGetComponent(out Slimelett slimelett) && this.lifeTime < slimelett.lifeTime)
         {
