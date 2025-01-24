@@ -11,8 +11,8 @@ public class Barrier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _startPos = transform.position;
-        _activatedPos = new Vector3(_startPos.x, _startPos.y - transform.localScale.y, _startPos.z);
+        _startPos = transform.localPosition;
+        _activatedPos = _startPos - transform.up * transform.localScale.y;
     }
     
     public void Activate()
