@@ -34,7 +34,7 @@ public class BabiSpawn : MonoBehaviour
         slimelett.walkDirection = spawnDirection;
         slimelett.transform.position = new Vector3(transform.position.x + circleCollider.radius * spawnDirection.x * 0.5f, transform.position.y);
         slimelett.transform.position = transform.position;
-        transform.LeanScale(transform.localScale - scaleIncrement, 0.15f).setEaseInOutBounce();
+        transform.LeanScale(transform.localScale - scaleIncrement, 0.25f).setEaseInOutSine();
         slimelett.transform.LeanScale(scaleIncrement, 0.05f).setEaseOutBounce().setFrom(Vector3.zero);
         slimelettSpawnCooldownTimer = 0f;
     }
