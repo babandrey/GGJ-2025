@@ -30,7 +30,7 @@ public class BabiSpawn : MonoBehaviour
         Vector2 babiToCursorDirection = (mousePos - transform.position).normalized;
             slimelett.walkDirection = babiToCursorDirection.x > 0 ? Vector3.right : Vector3.left;
 
-        transform.localScale -= scaleIncrement;
+        transform.LeanScale(transform.localScale - scaleIncrement, 0.15f).setEaseInOutBounce();
         slimelett.transform.localScale = scaleIncrement;
         slimelettSpawnCooldownTimer = 0f;
     }
