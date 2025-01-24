@@ -7,23 +7,24 @@ public class PressurePlate : MonoBehaviour
 {
     public int requiredSlimeWeight = 3;
     public Barrier affectedBarrier;
-    private List<Slimelet> _slimelets = new List<Slimelet>();
+    private List<ISizeable> _slimelets = new List<ISizeable>();
     private bool _isPressed = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.TryGetComponent(out Slimelet slimelet))
+        if (other.CompareTag("Player") || other.CompareTag("Slimelett"))
         {
-            if (!_slimelets.Contains(slimelet))
-                _slimelets.Add(slimelet);
+            ISizeable slime = other.GetComponent<ISizeable>();
+            if (!_slimelets.Contains(slime))
+                _slimelets.Add(slime);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.TryGetComponent(out Slimelet slimelet))
+        if (other.gameObject.TryGetComponent(out ISizeable slime))
         {
-            _slimelets.Remove(slimelet);
+            _slimelets.Remove(slime);
         }
     }
 
@@ -31,8 +32,8 @@ public class PressurePlate : MonoBehaviour
     {
         int currentWeight = 0;
 
-        foreach (Slimelet slimelet in _slimelets)
-            currentWeight += slimelet.slimeletSizer.slimeSize;
+        foreach (ISizeable slimelet in _slimelets)
+            currentWeight += slimelet.slimeSize;
         
         if(!_isPressed && currentWeight >= requiredSlimeWeight)
             Pressed();
