@@ -14,7 +14,8 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out Slimelet slimelet))
         {
-            _slimelets.Add(slimelet);
+            if (!_slimelets.Contains(slimelet))
+                _slimelets.Add(slimelet);
         }
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,18 @@ public class Slimelet : MonoBehaviour
     private bool isStopped = false;
     [HideInInspector] public float lifeTime = 0.0f;
     public SlimeletSizer slimeletSizer;
+    [SerializeField] private CircleCollider2D triggerCollider;
+    
+    private void Start()
+    {
+        StartCoroutine(WaitToActivateBabiTrigger());
+    }
+
+    private IEnumerator WaitToActivateBabiTrigger()
+    {
+        yield return new WaitForSeconds(.5f);
+        triggerCollider.enabled = true;
+    }
     
     void FixedUpdate()
     {
@@ -35,18 +48,32 @@ public class Slimelet : MonoBehaviour
         {
             isStopped = true;
         }
+
+        // moving slimelett should be the one to merge into stationary slimelett
+        if (collision.gameObject.TryGetComponent(out PlayerController babi))
+        {
+            MergeToBabi(babi);
+            return;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // moving slimelett should be the one to merge into stationary slimelett
-        if (collision.gameObject.TryGetComponent(out Slimelet slimelett) && this.lifeTime < slimelett.lifeTime)
-        {
-            MergeToSlimelett(slimelett);
-        }
+        if (collision.gameObject.TryGetComponent(out Slimelet slimelet) && this.lifeTime < slimelet.lifeTime)
+            MergeToSlimelet(slimelet);
     }
 
-    void MergeToSlimelett(Slimelet other)
+    void MergeToBabi(PlayerController babi)
+    {
+        this.rigidbody.simulated = false;
+        int size = this.slimeletSizer.slimeSize;
+        this.slimeletSizer.Resize(-size);
+        this.transform.LeanMove(babi.transform.position, 0.25f).setEaseInCubic().setDestroyOnComplete(true);
+        babi.GetComponent<BabiSizer>().Resize(size);
+    }
+    
+    void MergeToSlimelet(Slimelet other)
     {
         this.rigidbody.simulated = false;
         int size = this.slimeletSizer.slimeSize;

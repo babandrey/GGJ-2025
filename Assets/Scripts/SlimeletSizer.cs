@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,14 @@ using UnityEngine;
 public class SlimeletSizer : MonoBehaviour, ISizeable
 {
     [field: SerializeField] public int slimeSize { get; set; }
+    public Vector3 currScale { get; set; }
     private readonly Vector3 _scaleIncrement = new Vector3(0.25f, 0.25f, 0.25f);
-    
+
+    private void Start()
+    {
+        currScale = _scaleIncrement;
+    }
+
     public void Resize(int resizeAmount)
     {
         if (resizeAmount > 0)
@@ -18,7 +25,8 @@ public class SlimeletSizer : MonoBehaviour, ISizeable
     public void Grow(int amount)
     {
         slimeSize += amount;
-        transform.LeanScale(transform.localScale + (_scaleIncrement * amount), 0.05f).setEaseOutBounce();
+        currScale += (_scaleIncrement * amount);
+        SetScale();
     }
 
     public void Shrink(int amount)
@@ -27,7 +35,14 @@ public class SlimeletSizer : MonoBehaviour, ISizeable
             amount = slimeSize - 1;
         
         slimeSize -= amount;
-        transform.LeanScale(transform.localScale - (_scaleIncrement * amount), 0.25f).setEaseInOutSine();
+        currScale -= (_scaleIncrement * amount);
+        SetScale();
+    }
+
+    public void SetScale()
+    {
+        LeanTween.cancel(gameObject);
+        transform.LeanScale(currScale, 0.25f).setEaseInOutSine();
     }
 
     public bool IsShrinkable()
