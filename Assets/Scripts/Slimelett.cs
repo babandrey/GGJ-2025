@@ -6,26 +6,34 @@ public class Slimelett : MonoBehaviour
 {
     [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private CircleCollider2D circleCollider;
-    [SerializeField] private float speed = 150.0f;
+    [SerializeField] private float speed;
+    [SerializeField] private float stopFriction;
     [HideInInspector] public Vector3 walkDirection = Vector3.zero;
-    private bool isMoving = true;
+    private bool isStopped = false;
     private bool isMerging = false;
     [HideInInspector] public float lifeTime = 0.0f;
     void FixedUpdate()
     {
         lifeTime += Time.fixedDeltaTime;
 
-        if (!isMoving) return;
+        if (!isStopped)
+        {
+            Vector2 velocity = walkDirection * Time.fixedDeltaTime * speed;
+            rigidbody.velocity = new Vector2(velocity.x, rigidbody.velocity.y);
+        }
+        else
+        {
+            float xVelocity = Mathf.Max(0, rigidbody.velocity.x * stopFriction);
 
-        Vector3 velocity = walkDirection * Time.deltaTime * speed;
-        rigidbody.velocity = new Vector3(velocity.x, rigidbody.velocity.y, velocity.z);
+            rigidbody.velocity = new Vector2(xVelocity, rigidbody.velocity.y);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("AnchorPoint"))
         {
-            isMoving = false;
+            isStopped = true;
         }
     }
 
