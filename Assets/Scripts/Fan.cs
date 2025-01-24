@@ -5,7 +5,6 @@ using UnityEngine;
 public class Fan : MonoBehaviour
 {
     List<Slimelet> slimelets = new List<Slimelet>();
-    [SerializeField] private float fanMaxDistance;
     [SerializeField] private float fanForce;
     private void OnTriggerEnter2D(Collider2D collision)
     {
