@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8525701881045409682}
   - component: {fileID: 8816088520723987361}
   - component: {fileID: 8444508041797178811}
+  - component: {fileID: 6349124151193375488}
   m_Layer: 7
   m_Name: Slimelett
   m_TagString: Untagged
@@ -100,11 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 8816088520723987361}
-  circleCollider: {fileID: 0}
   speed: 150
   stopFriction: 0.9
   walkDirection: {x: 0, y: 0, z: 0}
   lifeTime: 0
+  slimeletSizer: {fileID: 6349124151193375488}
 --- !u!50 &8816088520723987361
 Rigidbody2D:
   serializedVersion: 4
@@ -167,3 +168,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6349124151193375488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8834765633520073368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f318c66f76498743b15faed77d13e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <slimeSize>k__BackingField: 0

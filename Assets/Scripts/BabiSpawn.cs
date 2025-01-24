@@ -1,45 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BabiSpawn : MonoBehaviour
 {
-    [SerializeField] private GameObject slimelettPrefab;
+    [SerializeField] private Slimelet slimeletPrefab;
     [SerializeField] private CircleCollider2D circleCollider;
+    [SerializeField] private BabiSizer babiSizer;
 
-    private Vector3 baseScale = Vector3.one;
-    private Vector3 scaleIncrement = new Vector3(0.25f, 0.25f, 0.25f);
-
-    private float slimelettSpawnCooldownTimer = 0f;
-    private float spawnSlimelettCooldown = 0.25f;
+    private float slimeletSpawnCooldownTimer = 0f;
+    private float spawnSlimeletCooldown = 0.25f;
+    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && CanSpawnSlimelett())
-        {
-            SpawnSlimelett();
-        }
-
-        slimelettSpawnCooldownTimer += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.E) && CanSpawnSlimelet())
+            SpawnSlimelet();
+        
+        if(slimeletSpawnCooldownTimer > 0)
+            slimeletSpawnCooldownTimer -= Time.deltaTime;
     }
 
-    void SpawnSlimelett()
+    void SpawnSlimelet()
     {
-        GameObject slimelettObj = Instantiate(slimelettPrefab);
-        var slimelett = slimelettObj.GetComponent<Slimelett>();
+        Slimelet slimelet = Instantiate(slimeletPrefab);
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 babiToCursorDirection = (mousePos - transform.position).normalized;
         var spawnDirection = babiToCursorDirection.x > 0 ? Vector3.right : Vector3.left;
-        slimelett.walkDirection = spawnDirection;
-        slimelett.transform.position = new Vector3(transform.position.x + circleCollider.radius * spawnDirection.x * 0.5f, transform.position.y);
-        transform.LeanScale(transform.localScale - scaleIncrement, 0.25f).setEaseInOutSine();
-        slimelett.transform.LeanScale(scaleIncrement, 0.05f).setEaseOutBounce().setFrom(Vector3.zero);
-        slimelettSpawnCooldownTimer = 0f;
+        
+        slimelet.walkDirection = spawnDirection;
+        slimelet.transform.position =
+            new Vector3(transform.position.x + circleCollider.radius * spawnDirection.x * 0.5f, transform.position.y);
+        slimelet.transform.localScale = Vector3.zero;
+        slimelet.slimeletSizer.Resize(1);
+        
+        babiSizer.Resize(-1);
+        slimeletSpawnCooldownTimer = spawnSlimeletCooldown;
     }
 
-    bool CanSpawnSlimelett()
+    bool CanSpawnSlimelet()
     {
-        return transform.localScale != scaleIncrement && slimelettSpawnCooldownTimer >= spawnSlimelettCooldown;
+        return babiSizer.IsShrinkable() && slimeletSpawnCooldownTimer <= 0;
     }
 }
