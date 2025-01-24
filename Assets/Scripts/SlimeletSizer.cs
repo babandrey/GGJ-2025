@@ -17,8 +17,8 @@ public class SlimeletSizer : MonoBehaviour, ISizeable
 
     public void Grow(int amount)
     {
-        transform.LeanScale(transform.localScale + (_scaleIncrement * amount), 0.05f).setEaseOutBounce();
         slimeSize += amount;
+        transform.LeanScale(transform.localScale + (_scaleIncrement * amount), 0.05f).setEaseOutBounce();
     }
 
     public void Shrink(int amount)
@@ -26,12 +26,12 @@ public class SlimeletSizer : MonoBehaviour, ISizeable
         if (amount > slimeSize)
             amount = slimeSize - 1;
         
-        transform.LeanScale(transform.localScale - (_scaleIncrement * amount), 0.25f).setEaseInOutSine();
         slimeSize -= amount;
+        transform.LeanScale(transform.localScale - (_scaleIncrement * amount), 0.25f).setEaseInOutSine();
     }
 
     public bool IsShrinkable()
     {
-        return slimeSize > 1;
+        return slimeSize > 0;
     }
 }

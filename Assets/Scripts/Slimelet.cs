@@ -49,7 +49,9 @@ public class Slimelet : MonoBehaviour
     void MergeToSlimelett(Slimelet other)
     {
         this.rigidbody.simulated = false;
+        int size = this.slimeletSizer.slimeSize;
+        this.slimeletSizer.Resize(-size);
         this.transform.LeanMove(other.transform.position, 0.25f).setEaseInCubic().setDestroyOnComplete(true);
-        other.slimeletSizer.Resize(this.slimeletSizer.slimeSize);
+        other.slimeletSizer.Resize(size);
     }
 }
