@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Slimelett : MonoBehaviour
+public class Slimelet : MonoBehaviour
 {
-    [SerializeField] public new Rigidbody2D rigidbody;
-    [SerializeField] private CircleCollider2D circleCollider;
+    [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private float speed;
     [SerializeField] private float stopFriction;
     [HideInInspector] public Vector3 walkDirection = Vector3.zero;
     private bool isStopped = false;
-    private bool isMerging = false;
     [HideInInspector] public float lifeTime = 0.0f;
+    public SlimeletSizer slimeletSizer;
+    
     void FixedUpdate()
     {
         lifeTime += Time.fixedDeltaTime;
@@ -39,16 +40,16 @@ public class Slimelett : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // moving slimelett should be the one to merge into stationary slimelett
-        if (collision.gameObject.TryGetComponent(out Slimelett slimelett) && this.lifeTime < slimelett.lifeTime)
+        if (collision.gameObject.TryGetComponent(out Slimelet slimelett) && this.lifeTime < slimelett.lifeTime)
         {
             MergeToSlimelett(slimelett);
         }
     }
 
-    void MergeToSlimelett(Slimelett other)
+    void MergeToSlimelett(Slimelet other)
     {
         this.rigidbody.simulated = false;
         this.transform.LeanMove(other.transform.position, 0.25f).setEaseInCubic().setDestroyOnComplete(true);
-        other.transform.LeanScale(other.transform.localScale + this.transform.localScale, 0.25f).setEaseInCubic();
+        other.slimeletSizer.Resize(this.slimeletSizer.slimeSize);
     }
 }

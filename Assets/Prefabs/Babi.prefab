@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1165803046959554234}
   - component: {fileID: 5154586315385710527}
   - component: {fileID: 7703916037229215608}
+  - component: {fileID: 3407334455901194956}
   m_Layer: 6
   m_Name: Babi
   m_TagString: Untagged
@@ -179,5 +180,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4bee79e64e296409cd7d6fb72efc87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimelettPrefab: {fileID: 8834765633520073368, guid: d045980a03bf9cc418c4dd40c9cd1ab2, type: 3}
+  slimeletPrefab: {fileID: 8525701881045409682, guid: d045980a03bf9cc418c4dd40c9cd1ab2, type: 3}
   circleCollider: {fileID: 1165803046959554234}
+  babiSizer: {fileID: 3407334455901194956}
+--- !u!114 &3407334455901194956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852183181101217436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b959af73c1d211d4bb85de0468aca5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <slimeSize>k__BackingField: 4
