@@ -28,7 +28,6 @@ public class LevelManager : MonoBehaviour
     {
         int buildIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(buildIndex);
-        
         StartCoroutine(UpdateGoalsRequired());
     }
 

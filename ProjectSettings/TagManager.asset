@@ -7,6 +7,7 @@ TagManager:
   - AnchorPoint
   - Slimelett
   - EndLevelGoal
+  - Fan
   layers:
   - Default
   - TransparentFX
