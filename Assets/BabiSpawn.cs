@@ -25,7 +25,11 @@ public class BabiSpawn : MonoBehaviour
     {
         GameObject slimelettObj = Instantiate(slimelettPrefab, transform.position, Quaternion.identity);
         var slimelett = slimelettObj.GetComponent<Slimelett>();
-        slimelett.walkDirection = Vector3.right;
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 babiToCursorDirection = (mousePos - transform.position).normalized;
+            slimelett.walkDirection = babiToCursorDirection.x > 0 ? Vector3.right : Vector3.left;
+
         transform.localScale -= scaleIncrement;
         slimelett.transform.localScale = scaleIncrement;
         slimelettSpawnCooldownTimer = 0f;
