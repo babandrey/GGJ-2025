@@ -203,5 +203,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7cd59f7dc82ab4faa36c334901429c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fanMaxDistance: 50
-  fanForce: 30
+  fanMaxDistance: 5.95
+  fanForce: 30.2
