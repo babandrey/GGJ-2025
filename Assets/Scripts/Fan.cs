@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Fan : MonoBehaviour
 {
-    List<Slimelett> slimelets = new List<Slimelett>();
+    List<Slimelet> slimelets = new List<Slimelet>();
     [SerializeField] private float fanMaxDistance;
     [SerializeField] private float fanForce;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.TryGetComponent(out Slimelett slimelett))
+        if(collision.gameObject.TryGetComponent(out Slimelet slimelett))
         {
             if (!slimelets.Contains(slimelett))
             {
@@ -22,13 +22,13 @@ public class Fan : MonoBehaviour
     {
         for(int i = slimelets.Count - 1; i >= 0; i--)
         {
-            Slimelett slimelett = slimelets[i];
+            Slimelet slimelet = slimelets[i];
 
-            if(slimelett != null)
+            if(slimelet != null)
             {
-                float size = slimelett.transform.localScale.x * 4f; // small size == 1, medium == 2 etc
-                float distance = Vector2.Distance(transform.position, slimelett.transform.position);
-                slimelett.rigidbody.AddForce(new Vector2(0, (fanMaxDistance - distance) * (fanForce - size * 0.3f)));
+                float size = slimelet.slimeletSizer.slimeSize;
+                float distance = Vector2.Distance(transform.position, slimelet.transform.position);
+                slimelet.rigidbody.AddForce(new Vector2(0, (fanMaxDistance - distance) * (fanForce - size * 0.3f)));
             }
             else
             {

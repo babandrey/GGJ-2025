@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class Slimelet : MonoBehaviour
 {
-    [SerializeField] private new Rigidbody2D rigidbody;
+    public new Rigidbody2D rigidbody;
     [SerializeField] private float speed;
     [SerializeField] private float stopFriction;
     [HideInInspector] public Vector3 walkDirection = Vector3.zero;
