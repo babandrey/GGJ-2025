@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    public float jumpForce = 10;
+    public float acceleration;
+    public float jumpForce;
+    public float friction;
+
+    private float currentSpeed;
+    public float maxSpeed;
+
     public LayerMask ground;
 
     private Rigidbody2D rb;
@@ -23,7 +28,18 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float move = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(move*speed, rb.velocity.y);
+        if(move != 0 )
+        {
+            currentSpeed += acceleration * move * Time.deltaTime;
+            currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed, maxSpeed);
+            rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
+        }
+        else
+        {
+            currentSpeed = Mathf.Lerp(currentSpeed, 0, friction * Time.deltaTime);
+            rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
+        }
+        
 
         if (Input.GetButtonDown("Jump") && CheckIsGrounded())
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);

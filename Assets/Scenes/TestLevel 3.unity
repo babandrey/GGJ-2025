@@ -439,7 +439,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 7
       m_TileObjectToInstantiateIndex: 65535
@@ -984,12 +984,12 @@ Tilemap:
     m_Data: {fileID: -1191274402, guid: 5aa8bf2d238d90442906ad6ca645ddf8, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 1698637332, guid: 5aa8bf2d238d90442906ad6ca645ddf8, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1578610738, guid: 5aa8bf2d238d90442906ad6ca645ddf8, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1578610738, guid: 5aa8bf2d238d90442906ad6ca645ddf8, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1698637332, guid: 5aa8bf2d238d90442906ad6ca645ddf8, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1769935713, guid: 5aa8bf2d238d90442906ad6ca645ddf8, type: 3}
   - m_RefCount: 8
@@ -1092,7 +1092,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1258656366}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8f75f1e9d7e6c4999492592a19e9f1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1404,9 +1404,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1165803046959554234, guid: e6a16eb93b848244e977131e9dcb05c1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4852183181101217436, guid: e6a16eb93b848244e977131e9dcb05c1, type: 3}
       propertyPath: m_Name
       value: Babi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154586315385710527, guid: e6a16eb93b848244e977131e9dcb05c1, type: 3}
+      propertyPath: friction
+      value: 3.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154586315385710527, guid: e6a16eb93b848244e977131e9dcb05c1, type: 3}
+      propertyPath: acceleration
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 5230024604929759172, guid: e6a16eb93b848244e977131e9dcb05c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1448,6 +1460,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7686561675381688248, guid: e6a16eb93b848244e977131e9dcb05c1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 56d4c39a679aa0f4fb94609a20e48964, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
