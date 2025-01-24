@@ -6,9 +6,9 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     public int requiredSlimeWeight = 3;
+    public Barrier affectedBarrier;
     private List<Slimelet> _slimelets = new List<Slimelet>();
     private bool _isPressed = false;
-    public int currentWeight = 0;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,7 +28,7 @@ public class PressurePlate : MonoBehaviour
 
     private void Update()
     {
-        currentWeight = 0;
+        int currentWeight = 0;
 
         foreach (Slimelet slimelet in _slimelets)
             currentWeight += slimelet.slimeletSizer.slimeSize;
@@ -43,11 +43,13 @@ public class PressurePlate : MonoBehaviour
     {
         _isPressed = true;
         Debug.Log("Pressed");
+        affectedBarrier.Activate();
     }
 
     private void LetGo()
     {
         _isPressed = false;
         Debug.Log("Let Go");
+        affectedBarrier.Deactivate();
     }
 }
