@@ -54,6 +54,8 @@ public class EndLevelGoal : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (LevelManager.Instance.transitioning) return;
+
         if(isCovered && currentCoverObject == collision.gameObject)
         {
             currentGoals--;
@@ -62,6 +64,5 @@ public class EndLevelGoal : MonoBehaviour
             // TODO: Add visuals
             LeanTween.color(gameObject, Color.white, 0.3f);
         }
-
     }
 }
