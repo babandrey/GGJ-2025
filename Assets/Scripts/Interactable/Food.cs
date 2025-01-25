@@ -26,6 +26,7 @@ public class Food : MonoBehaviour
         {
             collision.gameObject.GetComponent<ISizeable>().Resize(growAmount);
             transform.LeanScale(Vector3.zero, 0.25f).setDestroyOnComplete(true);
+            AudioManager.Instance.PlaySound("Eat");
         }
     }
 }
