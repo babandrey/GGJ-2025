@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7452428304275053303}
   - component: {fileID: 6680098364104402471}
+  - component: {fileID: 3397657465793109485}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2958161480348735631}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4392326644175621543}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.985423}
 --- !u!212 &6680098364104402471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,17 +74,33 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c84feca4d807bb44a31540972520213, type: 3}
-  m_Color: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 614a38479fca96c4dad0ed8e8e8cd91d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &3397657465793109485
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958161480348735631}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 10a92befa69ae1344b12a937da886591, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 10a92befa69ae1344b12a937da886591, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7542135675514074725
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,14 +231,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4392326644175621543}
     m_Modifications:
-    - target: {fileID: 2970925798503362501, guid: 564f627e1e2021b4ebc484321d320be3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2970925798503362501, guid: 564f627e1e2021b4ebc484321d320be3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2970925798503362501, guid: 564f627e1e2021b4ebc484321d320be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
