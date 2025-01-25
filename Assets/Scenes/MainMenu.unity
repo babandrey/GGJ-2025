@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6194503000106828927, guid: e9403dedc383b7b4395ba9502569a6fc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7223687991256698422, guid: e9403dedc383b7b4395ba9502569a6fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -241,6 +245,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7223687991256698422, guid: e9403dedc383b7b4395ba9502569a6fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040200666676406368, guid: e9403dedc383b7b4395ba9502569a6fc, type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -452,6 +460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6531841290384196374, guid: 4d0f5a8f933a0d04e8b4821141243044, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6531841290485428050, guid: 4d0f5a8f933a0d04e8b4821141243044, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -482,6 +494,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 7439156526102871705}
+  - {fileID: 913574953}
   - {fileID: 1683781918}
   - {fileID: 378358548}
-  - {fileID: 913574953}

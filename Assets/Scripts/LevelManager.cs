@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
-
+    private CanvasGroup canvasGroup;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -21,6 +23,7 @@ public class LevelManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             StartCoroutine(UpdateGoalsRequired());
+            canvasGroup = GetComponentInChildren<CanvasGroup>();
         }
     }
 
@@ -35,14 +38,25 @@ public class LevelManager : MonoBehaviour
     public void GoNextLevel()
     {
         int buildIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
-        SceneManager.LoadScene(buildIndex);
-        StartCoroutine(UpdateGoalsRequired());
+        EndLevelGoal.sineMove = false;
+        canvasGroup.LeanAlpha(1f, 1f).setDelay(1f).setOnComplete(() =>
+        {
+            SceneManager.LoadScene(buildIndex);
+            StartCoroutine(UpdateGoalsRequired());
+            canvasGroup.LeanAlpha(0f, 1f);
+            EndLevelGoal.sineMove = true;
+
+        });
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        StartCoroutine(UpdateGoalsRequired());
+        canvasGroup.LeanAlpha(1f, 1f).setOnComplete(() =>
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(UpdateGoalsRequired());
+            canvasGroup.LeanAlpha(0f, 1f);
+        });
     }
 
     // have to do this in coroutine otherwise OnTriggerExit calls in the new scene and causees incorrect count
