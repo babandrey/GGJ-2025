@@ -50,6 +50,6 @@ public class PlayerController : MonoBehaviour
 
     bool CheckIsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, cCollider.radius + 0.01f, ground.value);
+        return Physics2D.Raycast(transform.position + Vector3.up * cCollider.radius, Vector2.down, cCollider.radius + 0.01f, ground.value);
     }
 }
