@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbeffa2aa4ba5484c8367ae3b640f483
+guid: 8ee9d16519f9c1040a7f08f5c005b525
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue Idle - no slime_0
+      name: babi-crowned idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ab4dbbed918ba748b90ef9637118cca
-      internalID: 1627846490
+      spriteID: 173a7f9f1df08df4f81b2d9cf25688e6
+      internalID: -1659364232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Idle - no slime_1
+      name: babi-crowned idle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e92375ea45f3d364d8e04ee5dc778cab
-      internalID: 144836662
+      spriteID: 38b8d4cd29f12834c84be49b3d537326
+      internalID: -424504758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Idle - no slime_2
+      name: babi-crowned idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aa556ea2b7a0da499144aa64293c74a
-      internalID: 407066905
+      spriteID: 77e899316e7324b4181e84abe9f9f455
+      internalID: -136426890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Idle - no slime_3
+      name: babi-crowned idle_3
       rect:
         serializedVersion: 2
         x: 96
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 836ff2da42570b34392c04db8952f62f
-      internalID: 539653579
+      spriteID: 7b81ffc077315b347ae1a218d4ac9c82
+      internalID: 1930285538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Idle - no slime_4
+      name: babi-crowned idle_4
       rect:
         serializedVersion: 2
         x: 128
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69b21386d7c9a884f8192effb9935ae8
-      internalID: 1668120947
+      spriteID: 58c9a75cc6ee1e34c90cbfdc00ecd905
+      internalID: 1217689297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Idle - no slime_5
+      name: babi-crowned idle_5
       rect:
         serializedVersion: 2
         x: 160
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a551c631ca46eb942afb10a3e162abd6
-      internalID: 1418674602
+      spriteID: b6b7d9d344055164d9b0a3e13b1cf854
+      internalID: 70075321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue Idle - no slime_6
+      name: babi-crowned idle_6
       rect:
         serializedVersion: 2
         x: 192
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24df88a610734744fa85a0aae2e61abc
-      internalID: 416200670
+      spriteID: 8e11954e78a3d6d4d91a2f12fc1314a5
+      internalID: -486978999
       vertices: []
       indices: 
       edges: []
@@ -254,13 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blue Idle - no slime_0: 1627846490
-      Blue Idle - no slime_1: 144836662
-      Blue Idle - no slime_2: 407066905
-      Blue Idle - no slime_3: 539653579
-      Blue Idle - no slime_4: 1668120947
-      Blue Idle - no slime_5: 1418674602
-      Blue Idle - no slime_6: 416200670
+      babi-crowned idle_0: -1659364232
+      babi-crowned idle_1: -424504758
+      babi-crowned idle_2: -136426890
+      babi-crowned idle_3: 1930285538
+      babi-crowned idle_4: 1217689297
+      babi-crowned idle_5: 70075321
+      babi-crowned idle_6: -486978999
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
