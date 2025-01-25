@@ -52,6 +52,7 @@ public class PressurePlate : MonoBehaviour
     {
         _isPressed = true;
         _animatorController.SetTrigger("pressed");
+        AudioManager.Instance.PlaySound("PlatePressed");
         affectedBarrier.Activate();
     }
 
@@ -59,6 +60,7 @@ public class PressurePlate : MonoBehaviour
     {
         _isPressed = false;
         _animatorController.SetTrigger("released");
+        AudioManager.Instance.PlaySound("PlateReleased");
         affectedBarrier.Deactivate();
     }
 }

@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        LevelManager.Instance.GoNextLevel(0.5f);
+        LevelManager.Instance.GoNextLevel(1f);
     }
 
     public void Exit()

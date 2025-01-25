@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Mathematics;
 
 public class Fan : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class Fan : MonoBehaviour
     PlayerController babi;
     [SerializeField] private float fanForce;
     [SerializeField] private float[] maxHeightForSize;
+    private AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.TryGetComponent(out Slimelet slimelett))
@@ -20,6 +26,10 @@ public class Fan : MonoBehaviour
         else if(collision.gameObject.TryGetComponent(out PlayerController player))
         {
             babi = player;
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
     }
 
@@ -41,6 +51,7 @@ public class Fan : MonoBehaviour
             {
                 int size = slimelet.slimeletSizer.slimeSize;
                 float distance = Vector2.Distance(transform.position, slimelet.transform.position);
+                
                 float appliedForce = fanForce / (1.0f + distance * distance);
                 slimelet.rigidbody.AddForce(Vector2.up * (appliedForce - size * 0.3f));
             }
@@ -58,4 +69,5 @@ public class Fan : MonoBehaviour
             babi.rb.AddForce(Vector2.up * (appliedForce - size * 0.3f));
         }
     }
+
 }

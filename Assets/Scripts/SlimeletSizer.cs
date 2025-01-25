@@ -12,9 +12,16 @@ public class SlimeletSizer : MonoBehaviour, ISizeable
     public void Resize(int resizeAmount)
     {
         if (resizeAmount > 0)
+        {
             Grow(resizeAmount);
+            AudioManager.Instance.PlaySound("Merge");
+        }
+        
         if (resizeAmount < 0 && IsShrinkable())
+        {
             Shrink(-resizeAmount);
+            AudioManager.Instance.PlaySound("Merge");
+        }
     }
 
     public void Grow(int amount)
