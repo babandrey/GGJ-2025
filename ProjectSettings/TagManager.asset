@@ -9,6 +9,7 @@ TagManager:
   - EndLevelGoal
   - Fan
   - Food
+  - Spike
   layers:
   - Default
   - TransparentFX
