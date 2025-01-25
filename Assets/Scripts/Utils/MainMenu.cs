@@ -3,11 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private string startGameSceneName;
-    
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync(startGameSceneName);
+        LevelManager.Instance.GoNextLevel();
     }
 
     public void Exit()
