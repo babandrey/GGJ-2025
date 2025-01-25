@@ -25,6 +25,10 @@ public class LevelManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             StartCoroutine(UpdateGoalsRequired());
             canvasGroup = GetComponentInChildren<CanvasGroup>();
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                AudioManager.Instance.PlayMusic();
+            }
         }
     }
 
@@ -41,6 +45,11 @@ public class LevelManager : MonoBehaviour
         if (transitioning) return;
 
         int buildIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            AudioManager.Instance.PlayMusic();
+        }
+
         EndLevelGoal.sineMove = false;
         transitioning = true;
         canvasGroup.LeanAlpha(1f, 1f).setDelay(delay).setOnComplete(() =>
