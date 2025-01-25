@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 785754171413354120}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -147,9 +147,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: -0.014364958, y: 0.014365017}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.29889166
 --- !u!114 &4567703391340631117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sineAmp: 0.25
   sineFreq: 1.57
-  coveredColor: {r: 1, g: 0.6862745, b: 0.3764706, a: 1}
+  coveredColor: {r: 1, g: 0.495935, b: 0, a: 1}
   colorLerp: 0.29
 --- !u!1001 &8382998062796667644
 PrefabInstance:
