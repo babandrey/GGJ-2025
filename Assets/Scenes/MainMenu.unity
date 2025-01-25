@@ -356,38 +356,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3691463129541522733, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: m_Volume
-      value: 0.674
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939944749154479041, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: sounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939944749154479041, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: sounds.Array.data[3].name
-      value: Merge
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939944749154479041, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 0.813
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939944749154479041, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 0.341
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939944749154479041, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 0.626
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939944749154479041, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: sounds.Array.data[3].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939944749154479041, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
-      propertyPath: sounds.Array.data[3].clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6270051a0ddc8254e8908367898dd432, type: 3}
     - target: {fileID: 5891236138297136393, guid: aa292e1247ad58044a50501deb8b8b88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960

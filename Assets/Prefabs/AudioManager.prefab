@@ -57,12 +57,32 @@ MonoBehaviour:
     source: {fileID: 0}
     clips:
     - {fileID: 8300000, guid: 1cab8f68dd789194f8096799f7d64911, type: 3}
-    volume: 0.584
+    volume: 0.813
   - name: LevelLose
     source: {fileID: 0}
     clips:
     - {fileID: 8300000, guid: a5efcdf55df45f949ad09c2692015c04, type: 3}
-    volume: 0.584
+    volume: 0.341
+  - name: Merge
+    source: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: 6270051a0ddc8254e8908367898dd432, type: 3}
+    volume: 0.626
+  - name: Eat
+    source: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: 3aaa15a7904df5a4792228c1576bc0a7, type: 3}
+    volume: 0.626
+  - name: PlatePressed
+    source: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: 0e2e4c3f57499524cb648e08879f2d6b, type: 3}
+    volume: 0.626
+  - name: PlateReleased
+    source: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: 67343fa7afb9e624babb48a0ae976ac0, type: 3}
+    volume: 0.626
   introMusicSource: {fileID: 5870428548726860243}
   musicSource: {fileID: 3691463129541522733}
 --- !u!82 &5870428548726860243
@@ -173,7 +193,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3601d3c21fd0d6942b68cd55f8994e6c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.756
+  m_Volume: 0.674
   m_Pitch: 1
   Loop: 1
   Mute: 0
