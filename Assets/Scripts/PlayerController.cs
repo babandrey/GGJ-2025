@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     private CircleCollider2D cCollider;
     [HideInInspector] public BabiSizer babiSizer;
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDead) return;
+
         float move = Input.GetAxisRaw("Horizontal");
         if(move != 0 )
         {
@@ -57,7 +60,8 @@ public class PlayerController : MonoBehaviour
 
     public void Kill()
     {
-        transform.LeanScale(Vector3.zero, 0.4f); // kill animation
+        isDead = true;
+        transform.LeanScale(Vector3.zero, 0.35f).setEaseInOutSine(); // kill animation
         AudioManager.Instance.PlaySound("LevelLose");
         LevelManager.Instance.RestartLevel(0.8f);
     }
