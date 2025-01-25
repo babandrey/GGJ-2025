@@ -17,11 +17,13 @@ public class Barrier : MonoBehaviour
     
     public void Activate()
     {
+        LeanTween.cancel(gameObject);
         transform.LeanMove(_activatedPos, movingTime).setEaseInOutSine();
     }
 
     public void Deactivate()
     {
+        LeanTween.cancel(gameObject);
         transform.LeanMove(_startPos, movingTime).setEaseInOutSine();
     }
 }
