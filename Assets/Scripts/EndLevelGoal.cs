@@ -17,7 +17,7 @@ public class EndLevelGoal : MonoBehaviour
     public float sineFreq;
     public Color coveredColor;
     public float colorLerp;
-
+    public static bool sineMove = true;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +25,14 @@ public class EndLevelGoal : MonoBehaviour
     }
     private void Update()
     {
-        rb.velocity = Vector2.up * sineAmp * Mathf.Sin(Time.time * sineFreq);
+        if (sineMove)
+        {
+            rb.velocity = Vector2.up * sineAmp * Mathf.Sin(Time.time * sineFreq);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, Mathf.Lerp(rb.velocity.y, 0, Time.deltaTime * 5f));
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
