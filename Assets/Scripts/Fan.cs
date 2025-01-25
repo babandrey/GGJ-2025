@@ -25,7 +25,7 @@ public class Fan : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == babi.gameObject)
+        if (babi != null && collision.gameObject == babi.gameObject)
         {
             babi = null;
         }
