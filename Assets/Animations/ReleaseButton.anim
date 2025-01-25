@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PushButton
+  m_Name: ReleaseButton
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -23,7 +23,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 85c9cbe6331672e46931846dac7b0434, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: db06229399ddf5848a4af1c27ab29030, type: 3}
+      value: {fileID: 21300000, guid: 614a38479fca96c4dad0ed8e8e8cd91d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212

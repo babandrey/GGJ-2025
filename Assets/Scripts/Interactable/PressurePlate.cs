@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
@@ -9,6 +10,12 @@ public class PressurePlate : MonoBehaviour
     public Barrier affectedBarrier;
     private List<ISizeable> _slimelets = new List<ISizeable>();
     private bool _isPressed = false;
+    private Animator _animatorController;
+    
+    private void Start()
+    {
+        _animatorController = gameObject.GetComponentInChildren<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -44,14 +51,14 @@ public class PressurePlate : MonoBehaviour
     private void Pressed()
     {
         _isPressed = true;
-        Debug.Log("Pressed");
+        _animatorController.SetTrigger("pressed");
         affectedBarrier.Activate();
     }
 
     private void LetGo()
     {
         _isPressed = false;
-        Debug.Log("Let Go");
+        _animatorController.SetTrigger("released");
         affectedBarrier.Deactivate();
     }
 }
