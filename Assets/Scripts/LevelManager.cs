@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
     private CanvasGroup canvasGroup;
+    public bool transitioning { get; private set; } = false;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -37,15 +38,18 @@ public class LevelManager : MonoBehaviour
 
     public void GoNextLevel()
     {
+        if (transitioning) return;
+
         int buildIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         EndLevelGoal.sineMove = false;
+        transitioning = true;
         canvasGroup.LeanAlpha(1f, 1f).setDelay(1f).setOnComplete(() =>
         {
             SceneManager.LoadScene(buildIndex);
             StartCoroutine(UpdateGoalsRequired());
             canvasGroup.LeanAlpha(0f, 1f);
             EndLevelGoal.sineMove = true;
-
+            transitioning = false;
         });
     }
 
