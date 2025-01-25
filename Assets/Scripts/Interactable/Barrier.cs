@@ -12,7 +12,7 @@ public class Barrier : MonoBehaviour
     void Start()
     {
         _startPos = transform.localPosition;
-        _activatedPos = _startPos - transform.up * transform.localScale.y;
+        _activatedPos = _startPos + transform.right * transform.localScale.x;
     }
     
     public void Activate()
