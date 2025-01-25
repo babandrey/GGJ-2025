@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sineAmp: 0.25
   sineFreq: 1.57
+  coveredColor: {r: 1, g: 0.6862745, b: 0.3764706, a: 1}
+  colorLerp: 0.29
 --- !u!1001 &8382998062796667644
 PrefabInstance:
   m_ObjectHideFlags: 0
