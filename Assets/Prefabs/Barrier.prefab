@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6487053306874695192}
   - component: {fileID: 2965691397327203853}
   - component: {fileID: 7627017210507054959}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,3 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f923378009f0c4a8c3c02e8f0881b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movingTime: 2
