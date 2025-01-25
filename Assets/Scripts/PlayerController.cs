@@ -14,14 +14,16 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask ground;
 
-    private Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
     private CircleCollider2D cCollider;
+    [HideInInspector] public BabiSizer babiSizer;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cCollider = GetComponent<CircleCollider2D>();
+        babiSizer = GetComponent<BabiSizer>();
     }
 
     // Update is called once per frame
