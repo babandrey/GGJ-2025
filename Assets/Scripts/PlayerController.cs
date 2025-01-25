@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float acceleration;
     public float jumpForce;
+    public float sizeJumpModifier;
     public float friction;
 
     private float currentSpeed;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
         
 
         if (Input.GetButtonDown("Jump") && CheckIsGrounded())
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce - babiSizer.slimeSize * sizeJumpModifier), ForceMode2D.Impulse);
 
     }
 
