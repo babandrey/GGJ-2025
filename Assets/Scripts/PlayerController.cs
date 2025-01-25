@@ -57,7 +57,8 @@ public class PlayerController : MonoBehaviour
 
     public void Kill()
     {
-        // TODO : VISUAL
+        transform.LeanScale(Vector3.zero, 0.4f); // kill animation
+        AudioManager.Instance.PlaySound("LevelLose");
         LevelManager.Instance.RestartLevel(0.8f);
     }
 }

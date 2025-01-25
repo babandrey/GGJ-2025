@@ -49,6 +49,10 @@ public class LevelManager : MonoBehaviour
         {
             AudioManager.Instance.PlayMusic();
         }
+        else
+        {
+            AudioManager.Instance.PlaySound("LevelWin");
+        }
 
         EndLevelGoal.sineMove = false;
         transitioning = true;

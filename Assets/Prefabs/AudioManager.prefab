@@ -47,10 +47,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
+  - name: Pop
     source: {fileID: 0}
-    clips: []
-    volume: 0
+    clips:
+    - {fileID: 8300000, guid: 9dfa884d1778df24492c7c274c90e094, type: 3}
+    - {fileID: 8300000, guid: c3a74ade379d1f14fbbf0038e984d39f, type: 3}
+    volume: 0.622
+  - name: LevelWin
+    source: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: 1cab8f68dd789194f8096799f7d64911, type: 3}
+    volume: 0.584
+  - name: LevelLose
+    source: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: a5efcdf55df45f949ad09c2692015c04, type: 3}
+    volume: 0.584
   introMusicSource: {fileID: 5870428548726860243}
   musicSource: {fileID: 3691463129541522733}
 --- !u!82 &5870428548726860243
@@ -65,7 +77,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8b9e576eab416ce4d807972d806ef70b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.751
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -161,7 +173,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3601d3c21fd0d6942b68cd55f8994e6c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.756
   m_Pitch: 1
   Loop: 1
   Mute: 0
