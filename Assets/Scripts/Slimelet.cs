@@ -81,4 +81,10 @@ public class Slimelet : MonoBehaviour
         this.transform.LeanMove(other.transform.position, 0.25f).setEaseInCubic().setDestroyOnComplete(true);
         other.slimeletSizer.Resize(size);
     }
+
+    public void Kill()
+    {
+        // TODO: VISUAL
+        Destroy(gameObject);
+    }
 }

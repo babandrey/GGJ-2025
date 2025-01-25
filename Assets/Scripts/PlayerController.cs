@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -52,5 +53,11 @@ public class PlayerController : MonoBehaviour
     bool CheckIsGrounded()
     {
         return Physics2D.Raycast(transform.position + Vector3.up * cCollider.radius, Vector2.down, cCollider.radius + 0.01f, ground.value);
+    }
+
+    public void Kill()
+    {
+        // TODO : VISUAL
+        LevelManager.Instance.RestartLevel(0.8f);
     }
 }
