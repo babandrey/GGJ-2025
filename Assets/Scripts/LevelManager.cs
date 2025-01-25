@@ -55,11 +55,13 @@ public class LevelManager : MonoBehaviour
 
     public void RestartLevel(float delay = 0f)
     {
+        transitioning = true;
         canvasGroup.LeanAlpha(1f, 1f).setDelay(delay).setOnComplete(() =>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             StartCoroutine(UpdateGoalsRequired());
             canvasGroup.LeanAlpha(0f, 1f);
+            transitioning = false;
         });
     }
 
