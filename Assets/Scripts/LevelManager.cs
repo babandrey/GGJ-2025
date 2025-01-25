@@ -36,14 +36,14 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void GoNextLevel()
+    public void GoNextLevel(float delay = 1f)
     {
         if (transitioning) return;
 
         int buildIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
         EndLevelGoal.sineMove = false;
         transitioning = true;
-        canvasGroup.LeanAlpha(1f, 1f).setDelay(1f).setOnComplete(() =>
+        canvasGroup.LeanAlpha(1f, 1f).setDelay(delay).setOnComplete(() =>
         {
             SceneManager.LoadScene(buildIndex);
             StartCoroutine(UpdateGoalsRequired());
@@ -53,9 +53,9 @@ public class LevelManager : MonoBehaviour
         });
     }
 
-    public void RestartLevel()
+    public void RestartLevel(float delay = 0f)
     {
-        canvasGroup.LeanAlpha(1f, 1f).setOnComplete(() =>
+        canvasGroup.LeanAlpha(1f, 1f).setDelay(delay).setOnComplete(() =>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             StartCoroutine(UpdateGoalsRequired());
